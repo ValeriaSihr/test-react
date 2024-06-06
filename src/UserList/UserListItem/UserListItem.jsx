@@ -1,3 +1,5 @@
+import * as SC from './UserListItem.styled'
+
 export const UserListItem = ({ toggleModal, user, setUser }) => {
     
     const handleModal = () => {
@@ -5,10 +7,10 @@ export const UserListItem = ({ toggleModal, user, setUser }) => {
         toggleModal()
     }
 
-    return <li>
-                <h2 onClick={handleModal}>{user.name}</h2>
+    return <SC.Users>
+            <h2 onClick={handleModal}>{user.name}</h2>
             <span>Age: {user.age}</span>
-            <span>Gender: {user.gender}</span>
+            <span>Gender: {user.male ? 'Male' : 'Female'}</span>
    
-          </li>
+          </SC.Users>
 }
